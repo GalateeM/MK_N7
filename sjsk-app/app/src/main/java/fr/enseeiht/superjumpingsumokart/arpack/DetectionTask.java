@@ -11,6 +11,7 @@ import org.artoolkit.ar.base.ARToolKit;
 
 import java.io.ByteArrayInputStream;
 
+import fr.enseeiht.superjumpingsumokart.application.items.Goomba;
 import fr.enseeiht.superjumpingsumokart.application.items.MagicBox;
 import fr.enseeiht.superjumpingsumokart.application.items.NullItem;
 
@@ -42,6 +43,7 @@ public class DetectionTask extends AsyncTask<byte[], Void, Boolean> {
     private static long timeSinceLastHiro;
     private static long timeSinceLastKanji;
     private static long timeSinceLastMinion;
+    private static long timeSinceLastGoombaImpact;
 
     /**
      * Default constructor of {@link DetectionTask} (Romain Verset, Jorge Gutierrez - 08/02/2017).
@@ -100,12 +102,22 @@ public class DetectionTask extends AsyncTask<byte[], Void, Boolean> {
                             }
                             break;
                         case A:
+                            //TODO : temp ici en attendant reconnaissance du M
+                            Log.d(DETECTION_TASK_TAG, "Distance to marker A : " + Float.toString(-ARToolKit.getInstance().queryMarkerTransformation(id)[14]));
+                            if (GUI_GAME.getController().getDrone().getCurrentItem() instanceof NullItem && -ARToolKit.getInstance().queryMarkerTransformation(id)[14] < 250 && (SystemClock.elapsedRealtime() - timeSinceLastGoombaImpact) > 2000) {
+                                //on calcule le temps entre deux impacts possibles sur un goomba (min 2 secondes)
+                                timeSinceLastGoombaImpact = SystemClock.elapsedRealtime();
+                                new Goomba(GUI_GAME).applyEffect(GUI_GAME.getController());
+                                Log.d(DETECTION_TASK_TAG, "Collision with a goomba!");
+                            }
+
+                            /*
                             Log.d(DETECTION_TASK_TAG, "Distance to marker A : " + Float.toString(-ARToolKit.getInstance().queryMarkerTransformation(id)[14]));
                             if (GUI_GAME.getController().getDrone().getCurrentItem() instanceof NullItem && -ARToolKit.getInstance().queryMarkerTransformation(id)[14] < 250 && (SystemClock.elapsedRealtime() - timeSinceLastMinion) > 5000) {
                                 timeSinceLastMinion = SystemClock.elapsedRealtime();
                                 new MagicBox(GUI_GAME).applyEffect(GUI_GAME.getController());
                                 Log.d(DETECTION_TASK_TAG, "Got a Magic FakeBox");
-                            }
+                            }*/
                             break;
                         default:
                             Log.d(DETECTION_TASK_TAG, "Distance to marker " + s.name().concat(" ") + Float.toString(-ARToolKit.getInstance().queryMarkerTransformation(id)[14]));
