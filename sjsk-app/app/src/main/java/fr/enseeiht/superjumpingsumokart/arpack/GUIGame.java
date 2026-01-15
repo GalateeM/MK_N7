@@ -121,6 +121,12 @@ public class GUIGame extends Activity implements GameListener {
                     admb.stop(); // We need to stop the animation before starting in order to make it repeatable.
                     admb.start();
                     break;
+                case ANIMATE_GOOMBA:
+                    animationLayout.setBackgroundResource(R.drawable.anim_goombat);
+                    AnimationDrawable adg = (AnimationDrawable) animationLayout.getBackground();
+                    adg.stop(); // We need to stop the animation before starting in order to make it repeatable.
+                    adg.start();
+                    break;
                 default:
                     break;
             }
@@ -191,6 +197,11 @@ public class GUIGame extends Activity implements GameListener {
      * Message for {@link GUIGame#GUI_GAME_HANDLER}.
      */
     public final static int ANIMATE_MAGIC_BOX = 12;
+
+    /**
+     * Message for {@link GUIGame#GUI_GAME_HANDLER}.
+     */
+    public final static int ANIMATE_GOOMBA = 13;
 
     /**
      * The width of the frames of the Jumping Sumo Camera.

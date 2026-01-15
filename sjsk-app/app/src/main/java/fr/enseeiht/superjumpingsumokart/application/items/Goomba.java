@@ -45,6 +45,7 @@ public class Goomba extends Item {
 
     @Override
     public void applyEffect(DroneController droneController) {
+        GUI_GAME.GUI_GAME_HANDLER.sendEmptyMessage(GUIGame.ANIMATE_GOOMBA);
         droneController.spinningJump();
     }
 
