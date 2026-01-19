@@ -9,6 +9,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
@@ -58,6 +59,11 @@ public class GUIGame extends Activity implements GameListener {
      * The logging tag. Useful for debugging.
      */
     private static String GUI_GAME_TAG = "GUIGame";
+
+    /**
+     * MediaPlayer to create a sound effect
+     */
+    private MediaPlayer mediaPlayer;
 
     /**
      * Handler used to communicate with the Bluetooth thread and the drone Controller thread.
@@ -126,6 +132,10 @@ public class GUIGame extends Activity implements GameListener {
                     AnimationDrawable adg = (AnimationDrawable) animationLayout.getBackground();
                     adg.stop(); // We need to stop the animation before starting in order to make it repeatable.
                     adg.start();
+
+                    //sound effect on the phone
+                    mediaPlayer = MediaPlayer.create(GUIGame.this, R.raw.goomba_sound);
+                    mediaPlayer.start();
                     break;
                 default:
                     break;
