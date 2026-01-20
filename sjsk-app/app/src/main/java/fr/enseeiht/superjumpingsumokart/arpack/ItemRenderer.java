@@ -42,7 +42,9 @@ public final class ItemRenderer extends ARRenderer {
         // Symbols for checkpoints, arrival line and Magic Boxes.
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.HIRO, ARToolKit.getInstance().addModel2("Data/models/flag.obj", "single;Data/patt.hiro;80", DetectionTask.Symbol.HIRO.ordinal(), 1.0f, false));
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.KANJI, ARToolKit.getInstance().addModel2("Data/models/checkpoint.obj", "single;Data/patt.kanji;80", DetectionTask.Symbol.KANJI.ordinal(), 1.0f, false));
-        SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.A, ARToolKit.getInstance().addModel2("Data/models/magicbox.obj", "single;Data/patt.a;80", DetectionTask.Symbol.A.ordinal(), 1.0f, false));
+        //SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.A, ARToolKit.getInstance().addModel2("Data/models/magicbox.obj", "single;Data/patt.a;80", DetectionTask.Symbol.A.ordinal(), 1.0f, false));
+        // a changer quand y aura le .obj
+        SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.M, ARToolKit.getInstance().addModel2("Data/models/boule.obj", "single;Data/patt.a;80", DetectionTask.Symbol.M.ordinal(), 1.0f, false));
 
         // Initialisation of markers on the circuit.
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.B, ARToolKit.getInstance().addModel2("Data/models/giantbanana.obj", "single;Data/patt.b;80", DetectionTask.Symbol.B.ordinal(), 20.0f, true));
