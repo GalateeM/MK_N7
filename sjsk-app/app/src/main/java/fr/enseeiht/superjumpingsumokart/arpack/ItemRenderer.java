@@ -42,15 +42,15 @@ public final class ItemRenderer extends ARRenderer {
         // Symbols for checkpoints, arrival line and Magic Boxes.
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.HIRO, ARToolKit.getInstance().addModel2("Data/models/flag.obj", "single;Data/patt.hiro;80", DetectionTask.Symbol.HIRO.ordinal(), 1.0f, false));
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.KANJI, ARToolKit.getInstance().addModel2("Data/models/checkpoint.obj", "single;Data/patt.kanji;80", DetectionTask.Symbol.KANJI.ordinal(), 1.0f, false));
-        //SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.A, ARToolKit.getInstance().addModel2("Data/models/magicbox.obj", "single;Data/patt.a;80", DetectionTask.Symbol.A.ordinal(), 1.0f, false));
-        // a changer quand y aura le .obj
-        SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.M, ARToolKit.getInstance().addModel2("Data/models/goomba4.obj", "single;Data/patt.m;80", DetectionTask.Symbol.M.ordinal(), 1.0f, false));
+        SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.A, ARToolKit.getInstance().addModel2("Data/models/magicbox.obj", "single;Data/patt.a;80", DetectionTask.Symbol.A.ordinal(), 1.0f, false));
+
+        SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.M, ARToolKit.getInstance().addModel2("Data/models/goomba4.obj", "single;Data/patt.c;80", DetectionTask.Symbol.M.ordinal(), 1.0f, false));
 
         // Initialisation of markers on the circuit.
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.B, ARToolKit.getInstance().addModel2("Data/models/giantbanana.obj", "single;Data/patt.b;80", DetectionTask.Symbol.B.ordinal(), 20.0f, true));
         deleteModelAtSymbol(DetectionTask.Symbol.B);
-        SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.C, ARToolKit.getInstance().addModel2("Data/models/giantbanana.obj", "single;Data/patt.c;80", DetectionTask.Symbol.C.ordinal(), 20.0f, true));
-        deleteModelAtSymbol(DetectionTask.Symbol.C);
+       // SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.C, ARToolKit.getInstance().addModel2("Data/models/giantbanana.obj", "single;Data/patt.c;80", DetectionTask.Symbol.C.ordinal(), 20.0f, true));
+        // deleteModelAtSymbol(DetectionTask.Symbol.C);
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.D, ARToolKit.getInstance().addModel2("Data/models/giantbanana.obj", "single;Data/patt.d;80", DetectionTask.Symbol.D.ordinal(), 20.0f, true));
         deleteModelAtSymbol(DetectionTask.Symbol.D);
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.F, ARToolKit.getInstance().addModel2("Data/models/giantbanana.obj", "single;Data/patt.f;80", DetectionTask.Symbol.F.ordinal(), 20.0f, true));
