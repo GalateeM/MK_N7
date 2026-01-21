@@ -44,6 +44,7 @@ public final class ItemRenderer extends ARRenderer {
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.KANJI, ARToolKit.getInstance().addModel2("Data/models/checkpoint.obj", "single;Data/patt.kanji;80", DetectionTask.Symbol.KANJI.ordinal(), 1.0f, false));
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.A, ARToolKit.getInstance().addModel2("Data/models/magicbox.obj", "single;Data/patt.a;80", DetectionTask.Symbol.A.ordinal(), 1.0f, false));
 
+        // We want to use the "M" symbol but we detect with the patt.c as the patt.m doesn't work
         SYMBOLS_HASH_MAP.put(DetectionTask.Symbol.M, ARToolKit.getInstance().addModel2("Data/models/goomba4.obj", "single;Data/patt.c;80", DetectionTask.Symbol.M.ordinal(), 1.0f, false));
 
         // Initialisation of markers on the circuit.
