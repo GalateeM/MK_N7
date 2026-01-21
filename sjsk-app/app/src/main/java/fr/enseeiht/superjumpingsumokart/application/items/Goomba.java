@@ -51,6 +51,5 @@ public class Goomba extends Item {
 
     @Override
     public void assignResource(ImageButton ib) {
-        ib.setImageResource(R.drawable.magicbox);
     }
 }
