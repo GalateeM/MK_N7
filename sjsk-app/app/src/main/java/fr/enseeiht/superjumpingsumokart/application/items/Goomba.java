@@ -49,7 +49,6 @@ public class Goomba extends Item {
         droneController.spinningJump();
     }
 
-    //TODO
     @Override
     public void assignResource(ImageButton ib) {
         ib.setImageResource(R.drawable.magicbox);
