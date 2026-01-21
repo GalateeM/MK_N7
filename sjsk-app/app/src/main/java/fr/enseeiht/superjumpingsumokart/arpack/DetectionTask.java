@@ -111,9 +111,7 @@ public class DetectionTask extends AsyncTask<byte[], Void, Boolean> {
                             break;
                         case M:
                             Log.d(DETECTION_TASK_TAG, "Distance to marker M : " + Float.toString(-ARToolKit.getInstance().queryMarkerTransformation(id)[14]));
-                            Log.d(DETECTION_TASK_TAG, "Distance to marker M : " + Boolean.toString(GUI_GAME.getController().getDrone().getCurrentItem() instanceof NullItem));
                             if (GUI_GAME.getController().getDrone().getCurrentItem() instanceof NullItem && -ARToolKit.getInstance().queryMarkerTransformation(id)[14] < 250 && (SystemClock.elapsedRealtime() - timeSinceLastGoombaImpact) > 2000) {
-                                Log.d(DETECTION_TASK_TAG, "TEST In the IF CONDITION");
                                 //on calcule le temps entre deux impacts possibles sur un goomba (min 2 secondes)
                                 timeSinceLastGoombaImpact = SystemClock.elapsedRealtime();
                                 new Goomba(GUI_GAME).applyEffect(GUI_GAME.getController());
@@ -121,7 +119,7 @@ public class DetectionTask extends AsyncTask<byte[], Void, Boolean> {
                             }
                             break;
                         default:
-                            Log.d(DETECTION_TASK_TAG, "ICI Distance to marker " + s.name().concat(" ") + Float.toString(-ARToolKit.getInstance().queryMarkerTransformation(id)[14]));
+                            Log.d(DETECTION_TASK_TAG, "Distance to marker " + s.name().concat(" ") + Float.toString(-ARToolKit.getInstance().queryMarkerTransformation(id)[14]));
                             if (-ARToolKit.getInstance().queryMarkerTransformation(id)[14] < 300) {
                                 GUI_GAME.touchedSymbol(s);
                                 Log.d(DETECTION_TASK_TAG, "Touched symbol " + s.name());
